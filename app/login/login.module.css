@@ -1,0 +1,107 @@
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  /* Left Section - Login Form */
+  .left {
+    width: 25%;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+  }
+
+  .logo img {
+    width: 80px;  /* Adjust as needed */
+    height: auto;
+  }
+  
+  .heading {
+    margin-bottom: 1.5rem;
+  }
+  
+  .inputGroup {
+    width: 300px;
+    margin-bottom: 1rem;
+  }
+  
+  .inputGroup label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #333;
+  }
+  
+  .inputGroup input {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .options {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .options a {
+    text-decoration: none;
+    color: #18416d;
+  }
+  
+  .loginButton {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #124881;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Right Section - Image (Only for Laptop/Desktop) */
+  .right {
+    width: 75%;
+    background: url("https://images.pexels.com/photos/13268478/pexels-photo-13268478.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") center/cover no-repeat;
+    display: block;
+  }
+  
+  /* Mobile & Tablet View */
+  @media (max-width: 1024px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: url("https://images.pexels.com/photos/13268478/pexels-photo-13268478.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") center/cover no-repeat;
+    }
+  
+    .left {
+      width: 100%;
+      height: 100vh;
+      background: rgba(255, 255, 255, 0.8); /* Light overlay for better readability */
+      padding: 3rem;
+    }
+  
+    .right {
+      display: none; /* Hide the right section on mobile/tablet */
+    }
+  }
+  
+  
