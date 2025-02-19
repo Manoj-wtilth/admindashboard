@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FaSearch, FaBell } from "react-icons/fa";
 import styles from "./dashboard.module.css";
 import loginlogo from '../../public/loginlogo.png';
-//import layoutComponents from "../../config/settings";
+import layoutComponents from "../../config/dashboardLayout";
 
 const App = () => {
   const [selectedId, setSelectedId] = useState(0);
@@ -48,11 +48,11 @@ const App = () => {
       <div className={styles.body}>
         <div className={styles.leftSection}>
           {
-            // layoutComponents.map((component) => (
-            //   <button className={selectedId === component.id ? styles.selected : styles.button} key={component.id} onClick={() => handleButtonClick(component.title, component.id)}>
-            //     {component.icon} {component.title}
-            //   </button>
-            // ))
+            layoutComponents.map((component) => (
+              <button className={selectedId === component.id ? styles.selected : styles.button} key={component.id} onClick={() => handleButtonClick(component.title, component.id)}>
+                {component.icon} {component.title}
+              </button>
+            ))
           }
         </div>
         <div className={styles.rightSection}>
