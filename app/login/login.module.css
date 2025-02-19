@@ -1,3 +1,4 @@
+
 .container {
     display: flex;
     height: 100vh;
@@ -7,7 +8,7 @@
   /* Left Section - Login Form */
   .left {
     width: 25%;
-    background-color: #f8f9fa;
+    background-color: theme('colors.teal.400');
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,6 +16,7 @@
     padding: 2rem;
     position: relative;
     z-index: 2;
+    
   }
   
   .logo {
@@ -79,8 +81,22 @@
   /* Right Section - Image (Only for Laptop/Desktop) */
   .right {
     width: 75%;
-    background: url("https://images.pexels.com/photos/13268478/pexels-photo-13268478.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") center/cover no-repeat;
-    display: block;
+    /* background: url("https://images.pexels.com/photos/13268478/pexels-photo-13268478.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") center/cover no-repeat; */
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    .imageSection {
+      display: flex;
+      width: 50%;
+      height: 75%;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
   
   /* Mobile & Tablet View */
@@ -89,7 +105,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: url("https://images.pexels.com/photos/13268478/pexels-photo-13268478.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") center/cover no-repeat;
+      background: url("../../public/Illustration.png") center/cover no-repeat;
     }
   
     .left {

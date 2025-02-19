@@ -1,21 +1,50 @@
-import React from "react";
+'use client';
+import React, { useState } from "react";
 import styles from "./login.module.css";
+import { useRouter } from 'next/navigation'
+import loginImage from '../../public/Illustration.png';
+import loginlogo from '../../public/loginlogo.png';
+import toast from "react-hot-toast";
 
 const Login: React.FC= () => {
+  const [username , setUserName] = useState('');
+  const [password , setPassword] = useState('');
+  const router = useRouter()
+
+  const loginAction = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("/api/login", {
+        method: "POST",
+        body : JSON.stringify({username, password}),
+      });
+  
+      if (response.ok) {
+        toast.success("Successfully logged in");
+        router.push('/dashboard');
+      } else {
+        toast.error("Username or password is not matching");
+      }
+    } catch (error) {
+      toast.error("This is a error message!");
+    }
+  };
+
   return (
     <div className={styles.container}>
-      {/* Left Section - Login Form */}
       <div className={styles.left}>
-      <div className={styles.logo}><img src="https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg"></img></div>
+      <div className={styles.logo}>
+        <img src={loginlogo.src}></img>
+      </div>
       <h2 className={styles.heading}>Log in</h2>
-        <form>
+        <form onSubmit={loginAction}>
           <div className={styles.inputGroup}>
-            <label>Email Address</label>
-            <input type="email" placeholder="Enter your email" required />
+            <label>User name</label>
+            <input type="text" placeholder="Enter your username" onChange={e => setUserName(e.target.value)} required/>
           </div>
           <div className={styles.inputGroup}>
             <label>Password</label>
-            <input type="password" placeholder="Enter your password" required />
+            <input type="password" placeholder="Enter your password" onChange={e => setPassword(e.target.value)} required/>
           </div>
           <div className={styles.options}>
             <label>
@@ -30,7 +59,11 @@ const Login: React.FC= () => {
       </div>
 
       {/* Right Section - Only for Laptops & Desktops */}
-      <div className={styles.right}></div>
+      <div className={styles.right}>
+        <div className={styles.imageSection}>
+          <img src={loginImage.src}></img>
+        </div>
+      </div>
     </div>
   );
 };

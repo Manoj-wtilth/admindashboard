@@ -49,7 +49,18 @@ export default {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
-  			}
+  			},
+			teal: {
+				100: '#73A9A5',
+				400: '#A6CDCA',
+				500:'#73A9A5'
+			},
+			bgColour: {
+				bg1 : '#Cde0df',
+			},
+			blue : {
+				500: '#2a3d89'
+			}
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
