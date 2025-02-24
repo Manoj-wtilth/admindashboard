@@ -4,6 +4,8 @@ import { FaSearch, FaBell } from "react-icons/fa";
 import styles from "./dashboard.module.css";
 import loginlogo from '../../public/loginlogo.png';
 import layoutComponents from "../../config/dashboardLayout";
+import SectionOne from "@/view/dashboard/SectionOne";
+import SectionTwo from "@/view/dashboard/SectionTwo";
 
 const App = () => {
   const [selectedId, setSelectedId] = useState(0);
@@ -18,6 +20,22 @@ const App = () => {
   const handleSearchChange = (event : any) => {
     setSearchQuery(event.target.value);
   };
+
+  if(selectedId == 0){
+    setSelectedId(1)
+  }
+
+  const ConditonalDisplay = () => {
+    if(selectedId == 1){
+      return <>
+      <SectionOne />
+          <SectionTwo />
+          <SectionOne />
+      </>
+    } else {
+      return <div className={styles.mainContent}>{selectedContent}</div> 
+    }
+  }
 
   return (
     <>
@@ -56,7 +74,11 @@ const App = () => {
           }
         </div>
         <div className={styles.rightSection}>
-          <div className={styles.mainContent}>{selectedContent}</div>
+          {/* <SectionOne />
+          <SectionTwo />
+          <SectionOne /> */}
+          <ConditonalDisplay />
+          {/* <div className={styles.mainContent}>{selectedContent}</div> */}
         </div>
       </div>
       </>
