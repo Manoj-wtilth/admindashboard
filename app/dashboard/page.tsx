@@ -28,7 +28,7 @@ const App = () => {
   const ConditonalDisplay = () => {
     if(selectedId == 1){
       return <>
-      <SectionOne />
+          <SectionOne />
           <SectionTwo />
           <SectionOne />
       </>

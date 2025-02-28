@@ -30,13 +30,13 @@ const LineChart = () => {
                 ]
             }
         ],
-        height: "180",
+        height: "200",
         width: '400',
         exportEnabled: false
     };
 
     return (
-        <div style={{ height: "20px" }}>
+        <div style={{ top: '-25px', position: 'relative'}}>
             <CanvasJSChart options={options}/>
         </div>
     );
