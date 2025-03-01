@@ -15,7 +15,7 @@
 
 .leftSection{
     width: 18%;
-  background-color: theme('colors.teal.400');
+  background-color: theme('colors.trueGray.200');
   padding: 20px;
   display: flex;
   flex-direction: column;

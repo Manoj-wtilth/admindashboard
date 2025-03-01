@@ -55,6 +55,9 @@ export default {
 				400: '#A6CDCA',
 				500:'#73A9A5'
 			},
+			trueGray: {
+				200: '#d8e5e4'
+			},
 			bgColour: {
 				bg1 : '#Cde0df',
 			},
